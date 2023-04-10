@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SATCO Manager", "SATCO Manager\SATCO Manager.vbproj", "{D259C0F1-0F45-4658-B8E1-83152C6E8CB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D259C0F1-0F45-4658-B8E1-83152C6E8CB3}.Debug|x86.ActiveCfg = Debug|x86
+		{D259C0F1-0F45-4658-B8E1-83152C6E8CB3}.Debug|x86.Build.0 = Debug|x86
+		{D259C0F1-0F45-4658-B8E1-83152C6E8CB3}.Release|x86.ActiveCfg = Release|x86
+		{D259C0F1-0F45-4658-B8E1-83152C6E8CB3}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

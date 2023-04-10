@@ -1,0 +1,892 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D259C0F1-0F45-4658-B8E1-83152C6E8CB3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SATCO_Manager.My.MyApplication</StartupObject>
+    <RootNamespace>SATCO_Manager</RootNamespace>
+    <AssemblyName>SATCO Manager</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <UpdateUrl>\\SATCOMAINT\Satco\Installs\Install_Satco_Manager\</UpdateUrl>
+    <ProductName>SATCO Manager</ProductName>
+    <PublisherName>Integrity Controls</PublisherName>
+    <SuiteName>eScale</SuiteName>
+    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationVersion>3.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SATCO Manager.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SATCO Manager.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>CTRUSA.ICO</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>4C7E4FC7EC1D4C0C717B188BC7DC55C9D74359DF</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SATCO Manager_3_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FastMember, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.1.3.0\lib\net45\FastMember.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SATCO\SATCO\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenPop, Version=2.0.6.1120, Culture=neutral, PublicKeyToken=6bdb97f144b7efc8, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenPop.NET.2.0.6.1120\lib\net40\OpenPop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Barcode, Version=6.6.0.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.7.7.1\lib\net40\Spire.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.DataExport, Version=4.5.0.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.7.7.1\lib\net40\Spire.DataExport.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.DataExport.ResourceMgr, Version=2.1.0.0, Culture=neutral, PublicKeyToken=4bc1500157862925, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.7.7.1\lib\net40\Spire.DataExport.ResourceMgr.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Doc, Version=10.7.10.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.7.7.1\lib\net40\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.DocViewer.Forms, Version=7.6.0.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.7.7.1\lib\net40\Spire.DocViewer.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=8.7.2.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.7.7.1\lib\net40\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.PdfViewer.Asp, Version=7.7.1.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.7.7.1\lib\net40\Spire.PdfViewer.Asp.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.PdfViewer.Forms, Version=7.7.1.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.7.7.1\lib\net40\Spire.PdfViewer.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Presentation, Version=7.7.1.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.7.7.1\lib\net40\Spire.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.XLS, Version=12.7.0.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.7.7.1\lib\net40\Spire.XLS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\clsAccessControl.vb" />
+    <Compile Include="Classes\clsRail.vb" />
+    <Compile Include="Classes\clsSA.vb" />
+    <Compile Include="CrystalReport2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmAdministration.Designer.vb">
+      <DependentUpon>frmAdministration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCarrierGrid.Designer.vb">
+      <DependentUpon>frmCarrierGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCarrierGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCarrierMaint.Designer.vb">
+      <DependentUpon>frmCarrierMaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCarrierMaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCommodity.Designer.vb">
+      <DependentUpon>frmCommodity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCommodity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCommodityMaint.Designer.vb">
+      <DependentUpon>frmCommodityMaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCommodityMaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCorrectionGrid.Designer.vb">
+      <DependentUpon>frmCorrectionGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCorrectionGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDriver.designer.vb">
+      <DependentUpon>frmDriver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDriver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDriverControl.Designer.vb">
+      <DependentUpon>frmDriverControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDriverControl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMOMaint.Designer.vb">
+      <DependentUpon>frmMOMaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMOMaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderUploadBrenntag.Designer.vb">
+      <DependentUpon>frmOrderUploadBrenntag.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderUploadBrenntag.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderUploadMosaic.Designer.vb">
+      <DependentUpon>frmOrderUploadMosaic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderUploadMosaic.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderUploadSA.Designer.vb">
+      <DependentUpon>frmOrderUploadSA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderUploadSA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRailDetail.Designer.vb">
+      <DependentUpon>frmRailDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRailDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSAGrid.Designer.vb">
+      <DependentUpon>frmSAGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSAGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSAMaint.Designer.vb">
+      <DependentUpon>frmSAMaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSAMaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.designer.vb">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTankGrid.Designer.vb">
+      <DependentUpon>frmTankGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTankGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTankReport.Designer.vb">
+      <DependentUpon>frmTankReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTankReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicketPrint.designer.vb">
+      <DependentUpon>frmTicketPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicketPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransactionCorrection.designer.vb">
+      <DependentUpon>frmTransactionCorrection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransactionCorrection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransactionMaint.Designer.vb">
+      <DependentUpon>frmTransactionMaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransactionMaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewReport.Designer.vb">
+      <DependentUpon>frmViewReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWeighIn.designer.vb">
+      <DependentUpon>frmWeighIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmWeighIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ADU208.vb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Classes\clsBrenntag.vb" />
+    <Compile Include="Classes\clsCommodity.vb" />
+    <Compile Include="Classes\clsControl.vb" />
+    <Compile Include="Classes\clsDriver.vb" />
+    <Compile Include="Classes\clsConsignee.vb" />
+    <Compile Include="Classes\clsSystem.vb" />
+    <Compile Include="Classes\clsTank.vb" />
+    <Compile Include="Classes\clsTransaction.vb" />
+    <Compile Include="Classes\clsWeighIn.vb" />
+    <Compile Include="Classes\clsMosaic.vb" />
+    <Compile Include="Form1.designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccessControlView.Designer.vb">
+      <DependentUpon>frmAccessControlView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAccessControlView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccessReport.Designer.vb">
+      <DependentUpon>frmAccessReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAccessReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrenntagGrid.Designer.vb">
+      <DependentUpon>frmBrenntagGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBrenntagGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrenntagMaint.Designer.vb">
+      <DependentUpon>frmBrenntagMaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBrenntagMaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrenntagReport.Designer.vb">
+      <DependentUpon>frmBrenntagReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBrenntagReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDriverMaint.Designer.vb">
+      <DependentUpon>frmDriverMaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDriverMaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFileXfer.Designer.vb">
+      <DependentUpon>frmFileXfer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFileXfer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogon.Designer.vb">
+      <DependentUpon>frmLogon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogon.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRail.designer.vb">
+      <DependentUpon>frmRail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsigneeGrid.Designer.vb">
+      <DependentUpon>frmConsigneeGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsigneeGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsigneeMaint.Designer.vb">
+      <DependentUpon>frmConsigneeMaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsigneeMaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetup.Designer.vb">
+      <DependentUpon>frmSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTankContents.Designer.vb">
+      <DependentUpon>frmTankContents.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTankContents.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTankInventory.Designer.vb">
+      <DependentUpon>frmTankInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTankInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTankMaint.Designer.vb">
+      <DependentUpon>frmTankMaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTankMaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransManual.designer.vb">
+      <DependentUpon>frmTransManual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransManual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMosaicGrid.Designer.vb">
+      <DependentUpon>frmMosaicGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMosaicGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMosaicMaint.Designer.vb">
+      <DependentUpon>frmMosaicMaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMosaicMaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMosaicReport.Designer.vb">
+      <DependentUpon>frmMosaicReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMosaicReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Module1.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Form1.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="MyVerticalProgressBar.Designer.vb">
+      <DependentUpon>MyVerticalProgressBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MyVerticalProgressBar.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SQLControl.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAccessControlView.resx">
+      <DependentUpon>frmAccessControlView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAccessReport.resx">
+      <DependentUpon>frmAccessReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministration.resx">
+      <DependentUpon>frmAdministration.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBrenntagGrid.resx">
+      <DependentUpon>frmBrenntagGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBrenntagMaint.resx">
+      <DependentUpon>frmBrenntagMaint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBrenntagReport.resx">
+      <DependentUpon>frmBrenntagReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCarrierGrid.resx">
+      <DependentUpon>frmCarrierGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCarrierMaint.resx">
+      <DependentUpon>frmCarrierMaint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCommodity.resx">
+      <DependentUpon>frmCommodity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCommodityMaint.resx">
+      <DependentUpon>frmCommodityMaint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCorrectionGrid.resx">
+      <DependentUpon>frmCorrectionGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDriver.resx">
+      <DependentUpon>frmDriver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDriverControl.resx">
+      <DependentUpon>frmDriverControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDriverMaint.resx">
+      <DependentUpon>frmDriverMaint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFileXfer.resx">
+      <DependentUpon>frmFileXfer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogon.resx">
+      <DependentUpon>frmLogon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMOMaint.resx">
+      <DependentUpon>frmMOMaint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderUploadBrenntag.resx">
+      <DependentUpon>frmOrderUploadBrenntag.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderUploadMosaic.resx">
+      <DependentUpon>frmOrderUploadMosaic.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderUploadSA.resx">
+      <DependentUpon>frmOrderUploadSA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRail.resx">
+      <DependentUpon>frmRail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsigneeGrid.resx">
+      <DependentUpon>frmConsigneeGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsigneeMaint.resx">
+      <DependentUpon>frmConsigneeMaint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRailDetail.resx">
+      <DependentUpon>frmRailDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSAGrid.resx">
+      <DependentUpon>frmSAGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSAMaint.resx">
+      <DependentUpon>frmSAMaint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetup.resx">
+      <DependentUpon>frmSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTankContents.resx">
+      <DependentUpon>frmTankContents.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTankGrid.resx">
+      <DependentUpon>frmTankGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTankInventory.resx">
+      <DependentUpon>frmTankInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTankMaint.resx">
+      <DependentUpon>frmTankMaint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTankReport.resx">
+      <DependentUpon>frmTankReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicketPrint.resx">
+      <DependentUpon>frmTicketPrint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransactionCorrection.resx">
+      <DependentUpon>frmTransactionCorrection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransactionMaint.resx">
+      <DependentUpon>frmTransactionMaint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransManual.resx">
+      <DependentUpon>frmTransManual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewReport.resx">
+      <DependentUpon>frmViewReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWeighIn.resx">
+      <DependentUpon>frmWeighIn.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMosaicGrid.resx">
+      <DependentUpon>frmMosaicGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMosaicMaint.resx">
+      <DependentUpon>frmMosaicMaint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMosaicReport.resx">
+      <DependentUpon>frmMosaicReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyVerticalProgressBar.resx">
+      <DependentUpon>MyVerticalProgressBar.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="SATCO Manager_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="reports.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CTRUSA.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ClientDoc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommLayer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonControls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Controllers">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CubeDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataSetConversion">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ObjectFactory">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Prompting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ReportDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.XmlSerialize">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="FlashControlV71">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ShockwaveFlashObjects">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
