@@ -31,10 +31,6 @@ Partial Class frmTicketPrint
         Me.cmdPrintNSF = New System.Windows.Forms.Button()
         Me.cmdPrintSA = New System.Windows.Forms.Button()
         Me.cmdPrintLast = New System.Windows.Forms.Button()
-        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape3 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.cmdExit = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -49,7 +45,6 @@ Partial Class frmTicketPrint
         Me.GroupBox1.Controls.Add(Me.cmdPrintNSF)
         Me.GroupBox1.Controls.Add(Me.cmdPrintSA)
         Me.GroupBox1.Controls.Add(Me.cmdPrintLast)
-        Me.GroupBox1.Controls.Add(Me.ShapeContainer1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(17, 18)
         Me.GroupBox1.Name = "GroupBox1"
@@ -130,43 +125,6 @@ Partial Class frmTicketPrint
         Me.cmdPrintLast.Text = "Reprint Last Ticket"
         Me.cmdPrintLast.UseVisualStyleBackColor = True
         '
-        'ShapeContainer1
-        '
-        Me.ShapeContainer1.Location = New System.Drawing.Point(3, 25)
-        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape3, Me.LineShape2, Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(470, 415)
-        Me.ShapeContainer1.TabIndex = 12
-        Me.ShapeContainer1.TabStop = False
-        '
-        'LineShape3
-        '
-        Me.LineShape3.BorderWidth = 3
-        Me.LineShape3.Name = "LineShape3"
-        Me.LineShape3.X1 = 50
-        Me.LineShape3.X2 = 381
-        Me.LineShape3.Y1 = 222
-        Me.LineShape3.Y2 = 222
-        '
-        'LineShape2
-        '
-        Me.LineShape2.BorderWidth = 3
-        Me.LineShape2.Name = "LineShape2"
-        Me.LineShape2.X1 = 50
-        Me.LineShape2.X2 = 383
-        Me.LineShape2.Y1 = 309
-        Me.LineShape2.Y2 = 308
-        '
-        'LineShape1
-        '
-        Me.LineShape1.BorderWidth = 3
-        Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = 53
-        Me.LineShape1.X2 = 381
-        Me.LineShape1.Y1 = 69
-        Me.LineShape1.Y2 = 69
-        '
         'cmdExit
         '
         Me.cmdExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -181,7 +139,7 @@ Partial Class frmTicketPrint
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(520, 563)
+        Me.ClientSize = New System.Drawing.Size(511, 568)
         Me.Controls.Add(Me.cmdExit)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -200,9 +158,5 @@ Partial Class frmTicketPrint
     Friend WithEvents cmdPrintSA As System.Windows.Forms.Button
     Friend WithEvents cmdPrintLast As System.Windows.Forms.Button
     Friend WithEvents cmdExit As System.Windows.Forms.Button
-    Private WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
-    Private WithEvents LineShape3 As PowerPacks.LineShape
-    Private WithEvents LineShape2 As PowerPacks.LineShape
-    Private WithEvents LineShape1 As PowerPacks.LineShape
     Friend WithEvents cmdPrintBTCoA50 As Button
 End Class

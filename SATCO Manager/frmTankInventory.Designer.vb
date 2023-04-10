@@ -69,12 +69,6 @@ Partial Class frmTankInventory
         Me.chkActive1 = New System.Windows.Forms.CheckBox()
         Me.chkActive2 = New System.Windows.Forms.CheckBox()
         Me.chkActive3 = New System.Windows.Forms.CheckBox()
-        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.lneAlarm5 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.lneAlarm3 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.lneAlarm2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.lneAlarm1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.lneAlarm4 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.chkActive5 = New System.Windows.Forms.CheckBox()
         Me.cboCommodity5 = New System.Windows.Forms.ComboBox()
         Me.cboScale5 = New System.Windows.Forms.ComboBox()
@@ -87,12 +81,17 @@ Partial Class frmTankInventory
         Me.cmdPrevious = New System.Windows.Forms.Button()
         Me.cmdNext = New System.Windows.Forms.Button()
         Me.cmdEdit = New System.Windows.Forms.Button()
+        Me.lblStatus = New System.Windows.Forms.Label()
+        Me.lblAlarm1 = New System.Windows.Forms.Label()
         Me.FillTank5 = New SATCO_Manager.MyVerticalProgessBar()
         Me.FillTank3 = New SATCO_Manager.MyVerticalProgessBar()
         Me.FillTank2 = New SATCO_Manager.MyVerticalProgessBar()
         Me.FillTank1 = New SATCO_Manager.MyVerticalProgessBar()
         Me.FillTank4 = New SATCO_Manager.MyVerticalProgessBar()
-        Me.lblStatus = New System.Windows.Forms.Label()
+        Me.lblAlarm2 = New System.Windows.Forms.Label()
+        Me.lblAlarm3 = New System.Windows.Forms.Label()
+        Me.lblAlarm4 = New System.Windows.Forms.Label()
+        Me.lblAlarm5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -514,66 +513,6 @@ Partial Class frmTankInventory
         Me.chkActive3.Text = "Active"
         Me.chkActive3.UseVisualStyleBackColor = True
         '
-        'ShapeContainer1
-        '
-        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.lneAlarm5, Me.lneAlarm3, Me.lneAlarm2, Me.lneAlarm1, Me.lneAlarm4})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1035, 665)
-        Me.ShapeContainer1.TabIndex = 71
-        Me.ShapeContainer1.TabStop = False
-        '
-        'lneAlarm5
-        '
-        Me.lneAlarm5.BorderColor = System.Drawing.Color.Red
-        Me.lneAlarm5.BorderWidth = 3
-        Me.lneAlarm5.Name = "lneAlarm5"
-        Me.lneAlarm5.X1 = 792
-        Me.lneAlarm5.X2 = 822
-        Me.lneAlarm5.Y1 = 157
-        Me.lneAlarm5.Y2 = 157
-        '
-        'lneAlarm3
-        '
-        Me.lneAlarm3.BorderColor = System.Drawing.Color.Red
-        Me.lneAlarm3.BorderWidth = 3
-        Me.lneAlarm3.Name = "lneAlarm3"
-        Me.lneAlarm3.X1 = 447
-        Me.lneAlarm3.X2 = 477
-        Me.lneAlarm3.Y1 = 156
-        Me.lneAlarm3.Y2 = 156
-        '
-        'lneAlarm2
-        '
-        Me.lneAlarm2.BorderColor = System.Drawing.Color.Red
-        Me.lneAlarm2.BorderWidth = 3
-        Me.lneAlarm2.Name = "lneAlarm2"
-        Me.lneAlarm2.X1 = 285
-        Me.lneAlarm2.X2 = 315
-        Me.lneAlarm2.Y1 = 156
-        Me.lneAlarm2.Y2 = 156
-        '
-        'lneAlarm1
-        '
-        Me.lneAlarm1.BorderColor = System.Drawing.Color.Red
-        Me.lneAlarm1.BorderWidth = 3
-        Me.lneAlarm1.Name = "lneAlarm1"
-        Me.lneAlarm1.X1 = 121
-        Me.lneAlarm1.X2 = 151
-        Me.lneAlarm1.Y1 = 155
-        Me.lneAlarm1.Y2 = 155
-        '
-        'lneAlarm4
-        '
-        Me.lneAlarm4.BorderColor = System.Drawing.Color.Red
-        Me.lneAlarm4.BorderWidth = 3
-        Me.lneAlarm4.Name = "lneAlarm4"
-        Me.lneAlarm4.X1 = 622
-        Me.lneAlarm4.X2 = 652
-        Me.lneAlarm4.Y1 = 156
-        Me.lneAlarm4.Y2 = 156
-        '
         'chkActive5
         '
         Me.chkActive5.AutoSize = True
@@ -685,6 +624,26 @@ Partial Class frmTankInventory
         Me.cmdEdit.UseVisualStyleBackColor = True
         Me.cmdEdit.Visible = False
         '
+        'lblStatus
+        '
+        Me.lblStatus.AutoSize = True
+        Me.lblStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStatus.Location = New System.Drawing.Point(330, 632)
+        Me.lblStatus.Name = "lblStatus"
+        Me.lblStatus.Size = New System.Drawing.Size(362, 24)
+        Me.lblStatus.TabIndex = 85
+        Me.lblStatus.Text = "Tank changes allowed on Control PC only"
+        '
+        'lblAlarm1
+        '
+        Me.lblAlarm1.AutoSize = True
+        Me.lblAlarm1.ForeColor = System.Drawing.Color.Red
+        Me.lblAlarm1.Location = New System.Drawing.Point(100, 151)
+        Me.lblAlarm1.Name = "lblAlarm1"
+        Me.lblAlarm1.Size = New System.Drawing.Size(45, 13)
+        Me.lblAlarm1.TabIndex = 86
+        Me.lblAlarm1.Text = "Alarm ->"
+        '
         'FillTank5
         '
         Me.FillTank5.Location = New System.Drawing.Point(823, 154)
@@ -720,15 +679,45 @@ Partial Class frmTankInventory
         Me.FillTank4.Size = New System.Drawing.Size(100, 184)
         Me.FillTank4.TabIndex = 63
         '
-        'lblStatus
+        'lblAlarm2
         '
-        Me.lblStatus.AutoSize = True
-        Me.lblStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStatus.Location = New System.Drawing.Point(330, 632)
-        Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(362, 24)
-        Me.lblStatus.TabIndex = 85
-        Me.lblStatus.Text = "Tank changes allowed on Control PC only"
+        Me.lblAlarm2.AutoSize = True
+        Me.lblAlarm2.ForeColor = System.Drawing.Color.Red
+        Me.lblAlarm2.Location = New System.Drawing.Point(264, 151)
+        Me.lblAlarm2.Name = "lblAlarm2"
+        Me.lblAlarm2.Size = New System.Drawing.Size(45, 13)
+        Me.lblAlarm2.TabIndex = 87
+        Me.lblAlarm2.Text = "Alarm ->"
+        '
+        'lblAlarm3
+        '
+        Me.lblAlarm3.AutoSize = True
+        Me.lblAlarm3.ForeColor = System.Drawing.Color.Red
+        Me.lblAlarm3.Location = New System.Drawing.Point(426, 151)
+        Me.lblAlarm3.Name = "lblAlarm3"
+        Me.lblAlarm3.Size = New System.Drawing.Size(45, 13)
+        Me.lblAlarm3.TabIndex = 88
+        Me.lblAlarm3.Text = "Alarm ->"
+        '
+        'lblAlarm4
+        '
+        Me.lblAlarm4.AutoSize = True
+        Me.lblAlarm4.ForeColor = System.Drawing.Color.Red
+        Me.lblAlarm4.Location = New System.Drawing.Point(600, 151)
+        Me.lblAlarm4.Name = "lblAlarm4"
+        Me.lblAlarm4.Size = New System.Drawing.Size(45, 13)
+        Me.lblAlarm4.TabIndex = 89
+        Me.lblAlarm4.Text = "Alarm ->"
+        '
+        'lblAlarm5
+        '
+        Me.lblAlarm5.AutoSize = True
+        Me.lblAlarm5.ForeColor = System.Drawing.Color.Red
+        Me.lblAlarm5.Location = New System.Drawing.Point(772, 151)
+        Me.lblAlarm5.Name = "lblAlarm5"
+        Me.lblAlarm5.Size = New System.Drawing.Size(45, 13)
+        Me.lblAlarm5.TabIndex = 90
+        Me.lblAlarm5.Text = "Alarm ->"
         '
         'frmTankInventory
         '
@@ -736,6 +725,11 @@ Partial Class frmTankInventory
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1035, 665)
         Me.ControlBox = False
+        Me.Controls.Add(Me.lblAlarm5)
+        Me.Controls.Add(Me.lblAlarm4)
+        Me.Controls.Add(Me.lblAlarm3)
+        Me.Controls.Add(Me.lblAlarm2)
+        Me.Controls.Add(Me.lblAlarm1)
         Me.Controls.Add(Me.lblStatus)
         Me.Controls.Add(Me.cmdEdit)
         Me.Controls.Add(Me.cmdNext)
@@ -801,7 +795,6 @@ Partial Class frmTankInventory
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ShapeContainer1)
         Me.Name = "frmTankInventory"
         Me.Text = "frmTankInventory"
         Me.ResumeLayout(False)
@@ -872,11 +865,10 @@ Partial Class frmTankInventory
     Friend WithEvents cmdPrevious As System.Windows.Forms.Button
     Friend WithEvents cmdNext As System.Windows.Forms.Button
     Friend WithEvents cmdEdit As Button
-    Private WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
-    Private WithEvents lneAlarm3 As PowerPacks.LineShape
-    Private WithEvents lneAlarm2 As PowerPacks.LineShape
-    Private WithEvents lneAlarm1 As PowerPacks.LineShape
-    Private WithEvents lneAlarm4 As PowerPacks.LineShape
-    Private WithEvents lneAlarm5 As PowerPacks.LineShape
     Friend WithEvents lblStatus As Label
+    Friend WithEvents lblAlarm1 As Label
+    Friend WithEvents lblAlarm2 As Label
+    Friend WithEvents lblAlarm3 As Label
+    Friend WithEvents lblAlarm4 As Label
+    Friend WithEvents lblAlarm5 As Label
 End Class

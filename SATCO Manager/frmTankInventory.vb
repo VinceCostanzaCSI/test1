@@ -45,7 +45,7 @@
             chkActive3.Visible = False
             cboScale3.Visible = False
             cboCommodity3.Visible = False
-            lneAlarm3.Visible = False
+            lblAlarm3.Visible = False
             'Tank 4
             txtTankId4.Visible = False
             txtDescription4.Visible = False
@@ -57,7 +57,7 @@
             chkActive4.Visible = False
             cboScale4.Visible = False
             cboCommodity4.Visible = False
-            lneAlarm4.Visible = False
+            lblAlarm4.Visible = False
             'Tank 5
             txtTankId5.Visible = False
             txtDescription5.Visible = False
@@ -69,7 +69,7 @@
             chkActive5.Visible = False
             cboScale5.Visible = False
             cboCommodity5.Visible = False
-            lneAlarm5.Visible = False
+            lblAlarm5.Visible = False
 
         Else
             cmdPrevious.Visible = True
@@ -174,9 +174,11 @@
                         End If
 
                         YValue = (FillTank1.Top + FillTank1.Height) - Tics
-                        lneAlarm1.Y1 = YValue
-                        lneAlarm1.Y2 = YValue
-                        lneAlarm1.Visible = True
+                        'lneAlarm1.Y1 = YValue
+                        'lneAlarm1.Y2 = YValue
+                        'lneAlarm1.Visible = True
+                        lblAlarm1.Top = YValue - 10
+                        lblAlarm1.Visible = True
                         If .Item("CurrentLevel") >= .Item("LowAlarmValue") Then
                             ' ----- Set background depending on whether over or under alarm value -----
                             txtMaxWeight1.BackColor = Color.White
@@ -240,9 +242,11 @@
                             Tics = (FillTank1.Height / FillTank1.Maximum) * (LowValue)
                         End If
                         YValue = (FillTank2.Top + FillTank2.Height) - Tics
-                        lneAlarm2.Y1 = YValue
-                        lneAlarm2.Y2 = YValue
-                        lneAlarm2.Visible = True
+                        'lneAlarm2.Y1 = YValue
+                        'lneAlarm2.Y2 = YValue
+                        'lneAlarm2.Visible = True
+                        lblAlarm2.Top = YValue - 10
+                        lblAlarm2.Visible = True
                         If .Item("CurrentLevel") >= .Item("LowAlarmValue") Then
                             ' ----- Set background depending on whether over or under alarm value -----
                             txtMaxWeight2.BackColor = Color.White
@@ -310,9 +314,11 @@
                             Tics = (FillTank1.Height / FillTank1.Maximum) * (LowValue)
                         End If
                         YValue = (FillTank3.Top + FillTank3.Height) - Tics
-                        lneAlarm3.Y1 = YValue
-                        lneAlarm3.Y2 = YValue
-                        lneAlarm3.Visible = True
+                        'lneAlarm3.Y1 = YValue
+                        'lneAlarm3.Y2 = YValue
+                        'lneAlarm3.Visible = True
+                        lblAlarm3.Top = YValue - 10
+                        lblAlarm3.Visible = True
                         If .Item("CurrentLevel") >= .Item("LowAlarmValue") Then
                             ' ----- Set background depending on whether over or under alarm value -----
                             txtMaxWeight3.BackColor = Color.White
@@ -378,9 +384,11 @@
                             Tics = (FillTank1.Height / FillTank1.Maximum) * (LowValue)
                         End If
                         YValue = (FillTank4.Top + FillTank4.Height) - Tics
-                        lneAlarm4.Y1 = YValue
-                        lneAlarm4.Y2 = YValue
-                        lneAlarm4.Visible = True
+                        'lneAlarm4.Y1 = YValue
+                        'lneAlarm4.Y2 = YValue
+                        'lneAlarm4.Visible = True
+                        lblAlarm4.Top = YValue - 10
+                        lblAlarm4.Visible = True
                         If .Item("CurrentLevel") >= .Item("LowAlarmValue") Then
                             ' ----- Set background depending on whether over or under alarm value -----
                             txtMaxWeight4.BackColor = Color.White
@@ -446,9 +454,11 @@
                             Tics = (FillTank1.Height / FillTank1.Maximum) * (LowValue)
                         End If
                         YValue = (FillTank5.Top + FillTank5.Height) - Tics
-                        lneAlarm5.Y1 = YValue
-                        lneAlarm5.Y2 = YValue
-                        lneAlarm5.Visible = True
+                        'lneAlarm5.Y1 = YValue
+                        'lneAlarm5.Y2 = YValue
+                        'lneAlarm5.Visible = True
+                        lblAlarm5.Top = YValue - 10
+                        lblAlarm5.Visible = True
                         If .Item("CurrentLevel") >= .Item("LowAlarmValue") Then
                             ' ----- Set background depending on whether over or under alarm value -----
                             txtMaxWeight5.BackColor = Color.White

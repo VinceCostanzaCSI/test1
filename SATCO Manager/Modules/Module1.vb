@@ -7,7 +7,7 @@ Imports Spire.Xls
 Module Module1
 
     'Control Variables
-    Public Version As String = "3.1.0.25"
+    Public Version As String = "3.1.0.28"
     Public OperatorID As String
     Public OperatorName As String
     Public FileMaint As Boolean
