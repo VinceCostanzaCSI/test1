@@ -4,6 +4,8 @@ Imports System.Drawing.Printing
 Imports Spire.Doc
 Imports Spire.Doc.Documents
 Imports Spire.Xls
+Imports System.Xml.Linq
+
 Module Module1
 
     'Control Variables
@@ -135,9 +137,9 @@ Module Module1
           (Process.GetCurrentProcess.ProcessName).Length > 1 Then
 
             MessageBox.Show _
-             ("Another Instance of this process is already running", _
-                 "Multiple Instances Forbidden", _
-                  MessageBoxButtons.OK, _
+             ("Another Instance of this process is already running",
+                 "Multiple Instances Forbidden",
+                  MessageBoxButtons.OK,
                  MessageBoxIcon.Exclamation)
             Application.Exit()
             AnotherInstance = True
@@ -151,7 +153,7 @@ Module Module1
         'Setup log file
         'Dim localpath As String
         Try
-            Dim uriPath As String = System.IO.Path.GetDirectoryName( _
+            Dim uriPath As String = System.IO.Path.GetDirectoryName(
                System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase)
             'localpath = New Uri(uriPath).LocalPath
             Dim strFile As String = "C:\Satco\Logs\" & DateTime.Today.ToString("dd-MMM-yyyy") & ".txt"
@@ -165,7 +167,7 @@ Module Module1
         'Setup order log file
         'Dim localpath As String
         Try
-            Dim uriPath As String = System.IO.Path.GetDirectoryName( _
+            Dim uriPath As String = System.IO.Path.GetDirectoryName(
                System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase)
             'localpath = New Uri(uriPath).LocalPath
             Dim strFile As String = "C:\Satco\Logs\Order" & DateTime.Today.ToString("dd-MMM-yyyy") & ".txt"
@@ -238,8 +240,6 @@ Module Module1
         Dim Tonnage As Single
         Dim Gallons As Single
         Dim Quantity As Single
-        'Dim WordObj As Object
-        'Dim Doc As Object
         Dim CommID As String
         Dim CommDesc As String
         Dim Freight As String = ""
@@ -255,6 +255,8 @@ Module Module1
 
         Dim doc As New Document
         Dim navigator As New BookmarksNavigator(doc)
+        Dim RailMode As Boolean 'new in version 8/1/23 
+
 
         Transaction = New clsTransaction
         Commodity = New clsCommodity
@@ -266,7 +268,6 @@ Module Module1
         Brenntag = New clsBrenntag
 
         Try
-            'WordObj = CreateObject("Word.Application")
             Code = NewPrinterCode
             ID = NewPrinterID
             If Code = "" Or ID = "" Then
@@ -275,52 +276,90 @@ Module Module1
                 ID = Transaction.Id
             End If
             Transaction.FindRecord(ID, Code)
+
+            ' Define RailMode based on the Transaction's Gross weight
+            If Transaction.Gross > 100000 Then
+                RailMode = True
+            Else
+                RailMode = False
+            End If
+
             Consignee.FindRecord(Code)
 
             Commodity.FindRecord(Transaction.Commodity)
-            'get Commodity ID and Description and save to variables
             CommID = Commodity.ID
             CommDesc = Commodity.Description1
 
-
             Tank.FindRecord(Transaction.TankId)
-            'Now get Commodity info related to tank info
             Commodity.FindRecord(Tank.Commodity)
-            'Doc = ""
 
-            If Mid(CommID, 1, 2) = "SA" Then
-                If frmMain.optStockton.Checked = True Then
-                    If Consignee.NSF = True Then
-                        doc.LoadFromFile(SharePath & "Q172 SA BOL_NSF Stockton.docx")
+            If RailMode = True Then 'new in version 8/1/23 
+                If Mid(CommID, 1, 2) = "SA" Then
+                    doc.LoadFromFile(SharePath & "Q118 SA Rail BOL.docx")
+                    navigator.MoveToBookmark("Consignee")
+                    navigator.InsertText(Code)
+                    navigator.MoveToBookmark("TankID")
+                    navigator.InsertText(Transaction.TankId)
+                    navigator.MoveToBookmark("ScaleID")
+                    navigator.InsertText(Str(Transaction.ScaleNumber))
+                    navigator.MoveToBookmark("Strength")
+                    navigator.InsertText(Commodity.Description2)
+                    navigator.MoveToBookmark("Gravity")
+                    navigator.InsertText(Commodity.Description3)
+                ElseIf Mid(CommID, 1, 2) = "BN" Then
+                    doc.LoadFromFile(SharePath & "Q096 Brenntag Rail BOL.docx")
+                    navigator.MoveToBookmark("Driver")
+                    navigator.InsertText(Driver.Name)
+                    navigator.MoveToBookmark("Carrier")
+                    navigator.InsertText(Driver.Carrier)
+                    navigator.MoveToBookmark("VehicleID")
+                    navigator.InsertText(Transaction.VehicleID)
+                    navigator.MoveToBookmark("TrailerID")
+                    navigator.InsertText(Transaction.TrailerID)
+                    navigator.MoveToBookmark("Date")
+                    navigator.InsertText(Format(Transaction.TDate, "MM/dd/yyyy"))
+                    navigator.MoveToBookmark("Gross")
+                    navigator.InsertText(Format(Transaction.Gross, "##,##0"))
+                    navigator.MoveToBookmark("Tare")
+                    navigator.InsertText(Format(Transaction.Tare, "##,##0"))
+                    navigator.MoveToBookmark("Net")
+                    Net = Transaction.Gross - Transaction.Tare
+                    Tonnage = Net / 2000
+                    navigator.InsertText(Format(Net, "##,##0"))
+                    navigator.MoveToBookmark("Tons")
+                    navigator.InsertText(Format(Tonnage, "##.000"))
+                End If
+            ElseIf RailMode = False Then
+                If Mid(CommID, 1, 2) = "SA" Then
+                    If frmMain.optStockton.Checked = True Then
+                        If Consignee.NSF = True Then
+                            doc.LoadFromFile(SharePath & "Q172 SA BOL_NSF Stockton.docx")
+                        Else
+                            doc.LoadFromFile(SharePath & "Q171 SA BOL Stockton.docx")
+                        End If
                     Else
-                        doc.LoadFromFile(SharePath & "Q171 SA BOL Stockton.docx")
-                    End If
-                Else
-                    If Consignee.NSF = True Then
-                        doc.LoadFromFile(SharePath & "Q095 SA BOL_NSF.docx")
-                    Else
-                        doc.LoadFromFile(SharePath & "Q091 SA BOL.docx")
+                        If Consignee.NSF = True Then
+                            doc.LoadFromFile(SharePath & "Q095 SA BOL_NSF.docx")
+                        Else
+                            doc.LoadFromFile(SharePath & "Q091 SA BOL.docx")
+                        End If
                     End If
                 End If
+                If Val(CommID) >= 1 Or Mid(CommID, 1, 2) = "UC" Then
+                    doc.LoadFromFile(SharePath & "Q092 Nutrien Ag Solutions BOL.doc")
+                End If
+                If Mid(CommID, 1, 2) = "MO" Then
+                    doc.LoadFromFile(SharePath & "Q110 MO BOL.doc")
+                End If
+                If Mid(CommID, 1, 2) = "BN" Then
+                    doc.LoadFromFile(SharePath & "Q108 Brenntag BOL.doc")
+                End If
+            End If
 
-            End If
-            If Val(CommID) >= 1 Or Mid(CommID, 1, 2) = "UC" Then
-                doc.LoadFromFile(SharePath & "Q092 Nutrien Ag Solutions BOL.doc")
-            End If
-            If Mid(CommID, 1, 2) = "MO" Then
-                doc.LoadFromFile(SharePath & "Q110 MO BOL.doc")
-            End If
-            If Mid(CommID, 1, 2) = "BN" Then
-                doc.LoadFromFile(SharePath & "Q108 Brenntag BOL.doc")
-            End If
-
-            'Read from database for DriverInfo, MosaicCOA and BrenntagCOA
             SysOptions.GetCurrentRecord()
 
-            'Find the 'bookmark' and add text
             navigator.MoveToBookmark("BOL")
             navigator.InsertText(Trim(Code) & "-" & Trim(ID))
-
 
             If Mid(CommID, 1, 2) <> "BN" Then
                 navigator.MoveToBookmark("Desc1")
@@ -378,6 +417,7 @@ Module Module1
                 Else
                     navigator.InsertText("MCDS")
                 End If
+                navigator.Move
                 navigator.MoveToBookmark("Consignee")
                 navigator.InsertText(Code)
                 navigator.MoveToBookmark("TankID")
@@ -412,14 +452,11 @@ Module Module1
             End If
 
             If Mid(CommID, 1, 2) = "MO" Then
-                'If Mosaic.FindRecord(Transaction.ReleaseNumber) = True Then
                 navigator.MoveToBookmark("Release")
                 navigator.InsertText(Transaction.ReleaseNumber)
-                'End If
             End If
 
             If Mid(CommID, 1, 2) = "BN" Then
-
                 If Brenntag.FindRecord(Transaction.ReleaseNumber) = True Then
                     navigator.MoveToBookmark("PO")
                     navigator.InsertText(Brenntag.PO)
@@ -459,7 +496,6 @@ Module Module1
                         navigator.InsertText(SysOptions.BTCOA2)
                         navigator.MoveToBookmark("PCName")
                         navigator.InsertText(Transaction.Adjustment)
-                        'Print dillution details
                         navigator.MoveToBookmark("PCWater")
                         navigator.InsertText("H2O   (lbs): " & Transaction.Desc4)
                         navigator.MoveToBookmark("PCCaustic")
@@ -546,7 +582,6 @@ Module Module1
                 navigator.InsertText(Format(Quantity, "#,###.00"))
             End If
 
-            'Now print it out!
             Dim printDoc As PrintDocument = doc.PrintDocument
             printDoc.PrintController = New StandardPrintController()
             printDoc.Print()
@@ -559,21 +594,14 @@ Module Module1
             SysOptions = Nothing
             Mosaic = Nothing
             Brenntag = Nothing
-
+            doc = Nothing
+            navigator = Nothing
+            printDoc = Nothing
         Catch ex As Exception
-            MsgBox("PrintLastTicket: " & ex.Message)
-            AddLogEntry("PrintLastTicket: " & ex.Message)
-
-            Transaction = Nothing
-            Commodity = Nothing
-            Driver = Nothing
-            Consignee = Nothing
-            Tank = Nothing
-            SysOptions = Nothing
-            Mosaic = Nothing
-            Brenntag = Nothing
+            AddLogEntry("Error in PrintLastTicket: " & ex.Message)
         End Try
     End Sub
+
 
     Public Sub PrintRailTicket()
         Dim Code As String
